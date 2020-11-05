@@ -1,5 +1,5 @@
 [default]
-access_key = <%= aws_key_id %>
+access_key = <%= @aws_key_id %>
 bucket_location = US
 cloudfront_host = cloudfront.amazonaws.com
 cloudfront_resource = /2010-07-15/distribution
@@ -14,7 +14,7 @@ get_continue = False
 gpg_command = /usr/bin/gpg
 gpg_decrypt = %(gpg_command)s -d --verbose --no-use-agent --batch --yes --passphrase-fd %(passphrase_fd)s -o %(output_file)s %(input_file)s
 gpg_encrypt = %(gpg_command)s -c --verbose --no-use-agent --batch --yes --passphrase-fd %(passphrase_fd)s -o %(output_file)s %(input_file)s
-gpg_passphrase = <%= gpg_passphrase %>
+gpg_passphrase = <%= @gpg_passphrase %>
 guess_mime_type = True
 host_base = s3.amazonaws.com
 host_bucket = %(bucket)s.s3.amazonaws.com
@@ -28,7 +28,7 @@ proxy_port = 0
 recursive = False
 recv_chunk = 4096
 reduced_redundancy = False
-secret_key = <%= aws_secret_key %>
+secret_key = <%= @aws_secret_key %>
 send_chunk = 4096
 simpledb_host = sdb.amazonaws.com
 skip_existing = False
